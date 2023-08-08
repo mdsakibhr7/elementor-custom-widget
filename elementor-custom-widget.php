@@ -16,6 +16,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+
+public function __construct() {
+    parent::__construct();
+
+    // Enqueue CSS and JS
+    add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'enqueue_styles' ) );
+    add_action( 'elementor/frontend/after_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+}
+
+public function enqueue_styles() {
+    wp_enqueue_style( 'my-elementor-widget-style', plugins_url( '/assets/css/widget-style.css', __FILE__ ) );
+}
+
+public function enqueue_scripts() {
+    wp_enqueue_script( 'my-elementor-widget-script', plugins_url( '/assets/js/widget-script.js', __FILE__ ), array( 'jquery' ), '', true );
+}
+
 /**
  * Register List Widget.
  *
