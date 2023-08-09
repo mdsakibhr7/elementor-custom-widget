@@ -26,11 +26,12 @@ class Elementor_Customs_Widget_Plugin {
 	}
 
 	public function enqueue_styles() {
-		wp_enqueue_style( 'my-elementor-widget-style', plugins_url( '/assets/css/widget-style.css', __FILE__ ) );
+		wp_enqueue_style( 'widget-style', plugins_url( '/assets/css/style.css', __FILE__ ) );
+
 	}
 
 	public function enqueue_scripts() {
-		wp_enqueue_script( 'my-elementor-widget-script', plugins_url( '/assets/js/widget-script.js', __FILE__ ), array( 'jquery' ), '', true );
+		wp_enqueue_script( 'widget-script', plugins_url( '/assets/js/script.js', __FILE__ ), array( 'jquery' ), '', true );
 	}
 
 	/**
