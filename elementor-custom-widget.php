@@ -45,9 +45,9 @@ class Elementor_Customs_Widget_Plugin {
 	 * @since 1.0.0
 	 */
 	public function register_customs_widget( $widgets_manager ) {
-		require_once( __DIR__ . '/widgets/list-widget.php' );
+		require_once( __DIR__ . '/widgets/product-slider.php' );
 
-		$widgets_manager->register( new \Elementor_Our_Team_Widget() );
+		$widgets_manager->register( new \Elementor_Product_grid_Widget() );
 	}
 }
 
